@@ -31,11 +31,6 @@ model = Model.from_pretrained("pyannote/segmentation",
 ```
 
 ### 🔐 Set the token for use
-```python
-import os
-os.environ["HF_TOKEN"] = "your_token_here"
-
-
 Get your Hugging Face token from https://huggingface.co/settings/tokens and set it:
 
 ```python
