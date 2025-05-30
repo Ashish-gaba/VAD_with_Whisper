@@ -18,13 +18,30 @@ This Colab notebook performs voice activity detection (VAD) using `pyannote.audi
 
 ## 🔐 Hugging Face Authentication
 
+Some models like `pyannote/segmentation` are gated and require access approval.
+
+### ✅ Access Gated Model
+1. Visit [hf.co/pyannote/segmentation](https://huggingface.co/pyannote/segmentation) and **accept the user conditions**.
+2. Go to [hf.co/settings/tokens](https://huggingface.co/settings/tokens) to **create a read access token**.
+3. Use the token like this:
+```python
+from pyannote.audio import Model
+model = Model.from_pretrained("pyannote/segmentation", 
+                              use_auth_token="your_token_here")
+```
+
+### 🔐 Set the token for use
+```python
+import os
+os.environ["HF_TOKEN"] = "your_token_here"
+
+
 Get your Hugging Face token from https://huggingface.co/settings/tokens and set it:
 
 ```python
 import os
 os.environ["HF_TOKEN"] = "your_token_here"
 ```
-
 ---
 
 ## 🎵 Audio Upload and Conversion
